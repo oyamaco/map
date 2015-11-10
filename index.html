@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        var mapOptions = {
+          zoom: 17,
+          center: new google.maps.LatLng(41.437702,-112.6710481),
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+
+        var positions = [
+          {
+            'title':'Un-named Road',
+            'map': new google.maps.LatLng(41.4384982,-112.6646487),
+            'link':'http://cooper.edu',
+            'html':'<img src=https://upload.wikimedia.org/wikipedia/commons/8/84/Spiral-jetty-from-rozel-point.png>'
+          },
+          {
+            'title':'Spiral Jetty',
+            'map':new google.maps.LatLng(41.4379113,-112.6691327),
+            'link':'https://www.youtube.com/watch?v=vCfm95GyZt4'
+          },
+          {
+            'title':'RV',
+            'map': new google.maps.LatLng(41.4377243,-112.6641357),
+            'link':'http://s00131767.weebly.com/uploads/4/5/4/2/4542606/3476425_orig.jpg'
+          },
+          {
+            'title':'Video Games New York',
+            'map': new google.maps.LatLng(40.7278926,-73.99058),
+            'link':'http://www.videogamesnewyork.com/'
+          }
+        ];
+
+        draw('map', mapOptions, positions);
+      });
+
+      // google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+        <style>
+      #map {
+        height:1800px;
+        width:1800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
